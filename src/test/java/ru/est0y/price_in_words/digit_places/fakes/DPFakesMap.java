@@ -13,8 +13,14 @@ public class DPFakesMap {
             Map.entry(9, DigitPlaceFakeFactory.getFake(9, "девять", 9)),
             Map.entry(11, DigitPlaceFakeFactory.getFake(11, "одиннадцать", 11)),
             Map.entry(31, DigitPlaceFakeFactory.getFake(31, "тридцать один", 1)),
+            Map.entry(55, DigitPlaceFakeFactory.getFake(55, "пятьдесят пять", 5)),
             Map.entry(82, DigitPlaceFakeFactory.getFake(82, "восемьдесят два", 2)),
             Map.entry(99, DigitPlaceFakeFactory.getFake(99, "девяносто девять", 9)),
+            Map.entry(101, DigitPlaceFakeFactory.getFake(101, "сто один", 1)),
+            Map.entry(111, DigitPlaceFakeFactory.getFake(111, "сто одиннадцать", 11)),
+            Map.entry(121, DigitPlaceFakeFactory.getFake(121, "сто двадцать один", 1)),
+            Map.entry(202, DigitPlaceFakeFactory.getFake(202, "двести два", 2)),
+            Map.entry(222, DigitPlaceFakeFactory.getFake(222, "двести двадцать два", 2)),
             Map.entry(500, DigitPlaceFakeFactory.getFake(500, "пятьсот", 0)),
             Map.entry(731, DigitPlaceFakeFactory.getFake(731, "семьсот тридцать один", 1))
     );

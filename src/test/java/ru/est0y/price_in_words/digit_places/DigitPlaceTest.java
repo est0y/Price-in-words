@@ -12,7 +12,7 @@ class DigitPlaceTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             new DigitPlace(DPFakesMap.get(99),DPFakesMap.get(1),10,9) {
                 @Override
-                public String inWords() {
+                public String inWordsInternal(){
                     return null;
                 }
             };
@@ -20,7 +20,7 @@ class DigitPlaceTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             new DigitPlace(DPFakesMap.get(9),DPFakesMap.get(11),10,9) {
                 @Override
-                public String inWords() {
+                public String inWordsInternal() {
                     return null;
                 }
             };
@@ -32,7 +32,7 @@ class DigitPlaceTest {
     void getNumber() {
             DigitPlaceBehavior dp = new DigitPlace(DPFakesMap.get(9), DPFakesMap.get(1), 10, 9) {
                 @Override
-                public String inWords() {
+                public String inWordsInternal() {
                     return null;
                 }
             };

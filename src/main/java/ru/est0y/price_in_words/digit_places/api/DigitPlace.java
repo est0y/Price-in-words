@@ -29,4 +29,9 @@ public abstract class DigitPlace implements DigitPlaceBehavior {
         return previous.getLastDigitPlace();
     }
 
+    @Override
+    public String inWords() {
+        return this.inWordsInternal().trim();
+    }
+    abstract protected String inWordsInternal();
 }

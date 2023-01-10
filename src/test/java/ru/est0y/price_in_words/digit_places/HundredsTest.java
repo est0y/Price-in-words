@@ -12,7 +12,7 @@ class HundredsTest {
         Assertions.assertEquals("девятьсот девяносто девять", result);
 
         result = new Hundreds(DPFakesMap.get(9), DPFakesMap.get(0)).inWords();
-        Assertions.assertEquals("девятьсот", result.trim());
+        Assertions.assertEquals("девятьсот", result);
 
         result = new Hundreds(DPFakesMap.get(3), DPFakesMap.get(31)).inWords();
         Assertions.assertEquals("триста тридцать один", result);

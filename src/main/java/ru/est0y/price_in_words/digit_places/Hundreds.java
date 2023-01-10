@@ -24,7 +24,7 @@ public class Hundreds extends DigitPlace {
     }
 
     @Override
-    public String inWords() {
+    public String inWordsInternal() {
         return WORDS.get(value.getNumber()*BASE).concat(" ").concat(previous.inWords());
     }
 

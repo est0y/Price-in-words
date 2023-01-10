@@ -9,7 +9,7 @@ public class Thousands extends DigitPlace {
     }
 
     @Override
-    public String inWords() {
+    public String inWordsInternal() {
         long lastDigitPlaceValue = value.getLastDigitPlace().getNumber();
         String result = value.inWords().trim();
         if (lastDigitPlaceValue == 0 || lastDigitPlaceValue > 4) {

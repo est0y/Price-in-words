@@ -35,7 +35,7 @@ public class Tens extends DigitPlace {
     }
 
     @Override
-    public String inWords() {
+    public String inWordsInternal() {
         if (value.getNumber() == 1) {
             return outsideRules.get((int) (this.getNumber()));
         }

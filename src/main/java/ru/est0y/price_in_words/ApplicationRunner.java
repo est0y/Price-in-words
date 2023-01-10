@@ -21,7 +21,7 @@ public class ApplicationRunner {
         DigitPlaceBehavior digitPlace = new DigitPlaceBuilder(number).build();
         long lastNumber = digitPlace.getLastDigitPlace().getNumber();
         String currencyString = currency.getWordByLastNumber(lastNumber);
-        io.output(digitPlace.inWords().trim() + " " + currencyString);
+        io.output(digitPlace.inWords() + " " + currencyString);
     }
 
     private long getNumber() {

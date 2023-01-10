@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DigitPlaceBuilderTest {
     String numberInWords(long number) {
-        return new DigitPlaceBuilder(number).build().inWords().trim();
+        return new DigitPlaceBuilder(number).build().inWords();
     }
 
     @Test

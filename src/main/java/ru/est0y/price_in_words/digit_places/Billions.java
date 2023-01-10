@@ -9,7 +9,7 @@ public class Billions extends DigitPlace {
     }
 
     @Override
-    public String inWords() {
+    public String inWordsInternal() {
         long lastValueNumber = value.getLastDigitPlace().getNumber();
         String result = value.inWords();
         if (lastValueNumber == 1) {

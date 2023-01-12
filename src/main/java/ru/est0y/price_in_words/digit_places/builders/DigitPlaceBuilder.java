@@ -1,7 +1,6 @@
 package ru.est0y.price_in_words.digit_places.builders;
 
 import ru.est0y.price_in_words.digit_places.NullDigitPlace;
-import ru.est0y.price_in_words.digit_places.Ones;
 import ru.est0y.price_in_words.digit_places.api.DigitPlaceBehavior;
 import ru.est0y.price_in_words.exceptions.TooBigNumberException;
 
@@ -28,13 +27,14 @@ public class DigitPlaceBuilder {
 
     public DigitPlaceBehavior makeDigitPlace(long number) {
         List<Long> numList = listFromNumber(number);
-        DigitPlaceClasses[] classes = DigitPlaceClasses.values();
+        //DigitPlaceClasses[] classes = DigitPlaceClasses.values();
+        DigitPlaceClasses classes=new DigitPlaceClasses();
         DigitPlaceBehavior result;
         long temp;
-        if (numList.size() == 1 && numList.get(0) == 0) return new Ones(0);
+        if (numList.size() == 1 && numList.get(0) == 0) return classes.getInstance(0,0);
         if (numList.get(0) == 0) result = new NullDigitPlace();
         else {
-            result = classes[0].getDigitPlaceInstance(numList.get(0));
+            result = classes.getInstance(0,numList.get(0));
         }
         for (int i = 1, j = 1; i < numList.size(); i++, j++) {
             if (i > 2) {
@@ -46,7 +46,7 @@ public class DigitPlaceBuilder {
             if (temp == 0) {
                 continue;
             }
-            result = classes[j].getDigitPlaceInstance(makeDigitPlace(temp), result);
+            result = classes.getInstance(j,makeDigitPlace(temp), result);
         }
         return result;
     }

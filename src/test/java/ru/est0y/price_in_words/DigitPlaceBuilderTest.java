@@ -1,13 +1,14 @@
 package ru.est0y.price_in_words;
 
 import org.junit.jupiter.api.Test;
+import ru.est0y.price_in_words.digit_places.builders.DPClassesList;
 import ru.est0y.price_in_words.digit_places.builders.DigitPlaceBuilder;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DigitPlaceBuilderTest {
     String numberInWords(long number) {
-        return new DigitPlaceBuilder(number).build().inWords();
+        return new DigitPlaceBuilder(new DPClassesList()).build(number).inWords();
     }
 
     @Test

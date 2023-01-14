@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DigitPlaceBuilder {
-    private final Long number;
-
-    public DigitPlaceBuilder(long number) {
+    private final DigitPlaceClasses classes;
+    public DigitPlaceBuilder(DigitPlaceClasses classes){
+        this.classes=classes;
+    }
+    public DigitPlaceBehavior build(long number) {
         if (number < 0) {
             throw new IllegalArgumentException("Positive number expected but passed " + number);
         }
-        this.number = number;
-    }
-
-    public DigitPlaceBehavior build() {
         try {
-            return makeDigitPlace(this.number);
+            return makeDigitPlace(number);
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new TooBigNumberException(e);
         }
@@ -27,14 +25,12 @@ public class DigitPlaceBuilder {
 
     public DigitPlaceBehavior makeDigitPlace(long number) {
         List<Long> numList = listFromNumber(number);
-        //DigitPlaceClasses[] classes = DigitPlaceClasses.values();
-        DigitPlaceClasses classes=new DigitPlaceClasses();
         DigitPlaceBehavior result;
         long temp;
-        if (numList.size() == 1 && numList.get(0) == 0) return classes.getInstance(0,0);
+        if (numList.size() == 1 && numList.get(0) == 0) return classes.getInstance(0);
         if (numList.get(0) == 0) result = new NullDigitPlace();
         else {
-            result = classes.getInstance(0,numList.get(0));
+            result = classes.getInstance(numList.get(0));
         }
         for (int i = 1, j = 1; i < numList.size(); i++, j++) {
             if (i > 2) {

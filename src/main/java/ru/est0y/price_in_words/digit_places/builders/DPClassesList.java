@@ -7,7 +7,7 @@ import ru.est0y.price_in_words.exceptions.NoSuchDeclaredConstructorException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-public class DigitPlaceClasses {
+public class DPClassesList implements DigitPlaceClasses{
     private final static List<Class<? extends DigitPlaceBehavior>> list = List.of(
             Ones.class,
             Tens.class,

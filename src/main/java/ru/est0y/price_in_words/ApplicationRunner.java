@@ -3,6 +3,7 @@ package ru.est0y.price_in_words;
 import ru.est0y.price_in_words.currency.api.Currency;
 import ru.est0y.price_in_words.digit_places.api.DigitPlaceBehavior;
 import ru.est0y.price_in_words.digit_places.builders.DigitPlaceBuilder;
+import ru.est0y.price_in_words.digit_places.builders.DPClassesList;
 import ru.est0y.price_in_words.io.api.Io;
 
 import java.util.InputMismatchException;
@@ -18,7 +19,7 @@ public class ApplicationRunner {
 
     public void run() {
         long number = getNumber();
-        DigitPlaceBehavior digitPlace = new DigitPlaceBuilder(number).build();
+        DigitPlaceBehavior digitPlace = new DigitPlaceBuilder(new DPClassesList()).build(number);
         long lastNumber = digitPlace.getLastDigitPlace().getNumber();
         String currencyString = currency.getWordByLastNumber(lastNumber);
         io.output(digitPlace.inWords() + " " + currencyString);
